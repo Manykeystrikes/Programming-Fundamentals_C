@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+/*We'll say that a number is "teen" if it is in the range 13 ..19 inclusive. Given 3 integer 
+values, print 1 if one or more of them are teen*/
+
 int main ()
 {
     int a, b, c;
