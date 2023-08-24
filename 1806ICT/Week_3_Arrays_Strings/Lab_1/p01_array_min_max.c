@@ -11,9 +11,25 @@ int main()
 {
     //int values[100]; // asking for an array 100  elements
     // int values[100]; // static memory allocation
+    // static approch
+    int values[100];
     int n;
     scanf("%d", &n);
+    if (n > 100)
+    {
+        printf("Program designed for n < 100\n");
+        return 1;
+    }
+    
+    
+    // dynamic approach
     int *values = (int*)malloc(n * sizeof(int));//allow auto allocaiton of required memory
+    if (!values)
+    {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
     for (int i = 0; i < n; i++)
         scanf("%d", &values[i]);
 
@@ -31,6 +47,8 @@ int main()
         }
     }
         printf("Min = %d, Max = %d\n", min, max);
+        free(values);
+        
 
 
 
