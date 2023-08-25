@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+// to assist with random nuber generation
+int gen_rand()
+{
+    return RAND_MAX == 0x7fffffff ? rand() : rand() << 16 | rand() << 1 | rand() & 1;
+}
+
+
 /*run time perameters are on the command line*/
 int main ( int argc, char *argv[])
 {// ./analyse_nums 1000000 1 100
