@@ -1,0 +1,13 @@
+#define BASEYEAR 1601      /* *not* arbitrary; see explanation in text */
+
+long int makejd(int year, int month, int day)
+{
+    long int jdnum = 0;
+    jdnum += (year - BASEYEAR) * 365L;
+    jdnum += (year - BASEYEAR) / 4;
+    jdnum -= (year - BASEYEAR) / 100;
+    jdnum += (year - BASEYEAR) / 400;
+    jdnum += monthcount(month - 1, year);
+    jdnum += day;
+    return jdnum;
+}

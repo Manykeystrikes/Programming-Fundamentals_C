@@ -1,0 +1,15 @@
+struct date startDate = {28, 02, 0465};
+struct date endDate = {30, 06, 2020};
+unsigned long int dateDifference, dateDifferenceLastDateIncluded;
+
+dateDifference = convertDateToDays(endDate) - convertDateToDays(startDate);
+dateDifferenceLastDateIncluded = convertDateToDays(endDate) - convertDateToDays(startDate) + 1;
+
+printf("Difference in days: %lu.\n", dateDifference);
+printf("Difference in days, last date included: %lu.", dateDifferenceLastDateIncluded);
+
+/*
+ * Output:
+Difference in days: 625053.
+Difference in days, last date included: 625054.
+ */
